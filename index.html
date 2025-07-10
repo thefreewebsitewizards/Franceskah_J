@@ -238,7 +238,7 @@
                     
                     <div class="space-y-4 text-center md:text-left">
                         <p class="text-base sm:text-lg leading-relaxed text-black">
-                            Based between <span class="font-semibold">Birmingham</span>, <span class="font-semibold">U.K.</span> I bring a unique perspective rooted in Haitian heritage and driven by purpose.
+                            Born and raised in New York City, acted, modeled and lived in Florida, U.S.A. and now based in <span class="font-semibold">Birmingham</span>, <span class="font-semibold">U.K.</span> I bring a unique perspective rooted in Haitian heritage and driven by purpose.
                         </p>
                         <p class="text-base sm:text-lg leading-relaxed text-black">
                             From high-fashion editorials to lifestyle campaigns, I transform creative visions into compelling visual narratives that resonate with authenticity and sophistication.
@@ -532,7 +532,7 @@
                     </button>
                 </div>
                 
-                <form class="space-y-6">
+                <form class="space-y-6" id="bookingForm">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="modalName" class="block text-gray-800 mb-3 font-medium tracking-wide text-xs sm:text-sm uppercase">Full Name</label>
@@ -565,10 +565,10 @@
                         <label for="modalBudget" class="block text-gray-800 mb-3 font-medium tracking-wide text-xs sm:text-sm uppercase">Budget Range</label>
                         <select id="modalBudget" class="w-full px-4 sm:px-5 py-3 sm:py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white text-sm sm:text-base">
                             <option value="">Select Budget Range</option>
-                            <option value="1000-2500">$1,000 - $2,500</option>
-                            <option value="2500-5000">$2,500 - $5,000</option>
-                            <option value="5000-10000">$5,000 - $10,000</option>
-                            <option value="10000+">$10,000+</option>
+                            <option value="1000-2500">£50 - £150</option>
+                            <option value="2500-5000">£150 - £250</option>
+                            <option value="5000-10000">£250 - £350</option>
+                            <option value="10000+">£350 - £450</option>
                             <option value="tbd">To Be Discussed</option>
                         </select>
                     </div>
@@ -580,8 +580,9 @@
                         <button type="button" id="cancelBooking" class="flex-1 bg-gray-200 text-gray-800 px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-gray-300 transition-all duration-300 font-medium tracking-wide uppercase text-xs sm:text-sm">
                             Cancel
                         </button>
-                        <button type="submit" class="flex-1 bg-gradient-to-r from-gray-900 to-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:from-black hover:to-gray-800 transition-all duration-300 font-medium tracking-wide uppercase text-xs sm:text-sm shadow-lg hover:shadow-xl">
-                            Submit Inquiry
+                        <button type="submit" class="flex-1 bg-gradient-to-r from-gray-900 to-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:from-black hover:to-gray-800 transition-all duration-300 font-medium tracking-wide uppercase text-xs sm:text-sm shadow-lg hover:shadow-xl" id="submitBtn">
+                            <span id="submitText">Submit Inquiry</span>
+                            <span id="loadingText" class="hidden">Sending...</span>
                         </button>
                     </div>
                 </form>
@@ -837,7 +838,100 @@
                     closeBookingModal();
                 }
             });
+
+            // Form submission handling with EmailJS
+            const bookingForm = document.getElementById('bookingForm');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = {
+                        name: document.getElementById('modalName').value,
+                        company: document.getElementById('modalCompany').value,
+                        email: document.getElementById('modalEmail').value,
+                        project: document.getElementById('modalProject').value,
+                        budget: document.getElementById('modalBudget').value,
+                        message: document.getElementById('modalMessage').value
+                    };
+                    
+                    // Validate required fields
+                    if (!formData.name || !formData.email || !formData.message) {
+                        alert('Please fill in all required fields (Name, Email, and Project Details).');
+                        return;
+                    }
+                    
+                    // Show loading state
+                    const submitBtn = document.getElementById('submitBtn');
+                    const submitText = document.getElementById('submitText');
+                    const loadingText = document.getElementById('loadingText');
+                    
+                    submitBtn.disabled = true;
+                    submitText.classList.add('hidden');
+                    loadingText.classList.remove('hidden');
+                    
+                    // EmailJS configuration (you'll need to replace these with your actual EmailJS credentials)
+                    // For now, we'll simulate the email sending
+                    setTimeout(() => {
+                        // Reset form
+                        bookingForm.reset();
+                        
+                        // Reset button state
+                        submitBtn.disabled = false;
+                        submitText.classList.remove('hidden');
+                        loadingText.classList.add('hidden');
+                        
+                        // Show success message
+                        alert('Thank you for reaching out. For urgent matters, we recommend direct booking via our email or Instagram.');
+                        
+                        // Close modal
+                        closeBookingModal();
+                        
+                        // Log form data for debugging (remove in production)
+                        console.log('Form submitted with data:', formData);
+                    }, 2000);
+                });
+            }
         });
     </script>
+    
+    <!-- EmailJS SDK (uncomment and configure when ready to use) -->
+    <!-- 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+            emailjs.init('YOUR_PUBLIC_KEY');
+        })();
+        
+        // Replace the setTimeout simulation above with this EmailJS implementation:
+        /*
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+            from_name: formData.name,
+            from_email: formData.email,
+            company: formData.company,
+            project_type: formData.project,
+            budget_range: formData.budget,
+            message: formData.message,
+            to_email: 'your-email@example.com'
+        }).then(function(response) {
+            // Success handling
+            bookingForm.reset();
+            submitBtn.disabled = false;
+            submitText.classList.remove('hidden');
+            loadingText.classList.add('hidden');
+            alert('Thank you for your inquiry! Your message has been sent successfully.');
+            closeBookingModal();
+        }, function(error) {
+            // Error handling
+            submitBtn.disabled = false;
+            submitText.classList.remove('hidden');
+            loadingText.classList.add('hidden');
+            alert('Sorry, there was an error sending your message. Please try again or contact me directly.');
+            console.error('EmailJS error:', error);
+        });
+        */
+    </script>
+    -->
 </body>
 </html>
