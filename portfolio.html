@@ -32,14 +32,22 @@
             }
         }
         .gallery-item {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            border-radius: 12px;
+            overflow: hidden;
         }
         .gallery-item:hover {
-            transform: scale(1.03);
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
         .gallery-item img {
-            transition: all 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: brightness(0.9);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: brightness(1.1);
         }
         .nav-scrolled {
             background-color: rgba(26, 26, 26, 0.95);
@@ -302,124 +310,185 @@
             </div>
             
             <div class="masonry-gallery fade-in">
+                <!-- RUNWAY SECTION -->
                 <!-- Large Featured Image -->
-                <div class="gallery-item editorial large-item" data-caption="Runway Charity walk">
-                    <img src="https://scontent.fmnl37-1.fna.fbcdn.net/v/t1.15752-9/512160487_4217593715194536_5913834533486715981_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=QHEg6LJcuqAQ7kNvwErJBl-&_nc_oc=Adkc7p7pntRQNtHeaMGAeEbey3YGYWnLL8S3J__2_HndszDkuLaYuKSxoDfI6yEtVpE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl37-1.fna&oh=03_Q7cD2gH9I0DUtxpHnNzvPBziU5AW2qpz1J-Qj866UWX1EyLpAQ&oe=688C67CA" 
-                         alt="Editorial Shoot" class="w-full h-full object-cover rounded-lg cursor-pointer">
+                <div class="gallery-item runway large-item" data-caption="Runway Fashion">
+                    <img src="Images/img1-runway.jpg" 
+                         alt="Runway Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-sm sm:text-lg md:text-xl font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+                
+                <!-- EDITORIAL SECTION -->
+                <!-- Medium Image -->
+                <div class="gallery-item editorial medium-item" data-caption="Editorial Fashion">
+                    <img src="Images/img2-editorial.jpg" 
+                         alt="Editorial Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-xs sm:text-sm md:text-lg font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+                
+                <!-- LIFESTYLE SECTION -->
+                <!-- Small Image -->
+                <div class="gallery-item lifestyle small-item" data-caption="Lifestyle Photography">
+                    <img src="Images/img3-lifestyle.jpg" 
+                         alt="Lifestyle Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-xs sm:text-sm font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+                
+                <!-- EDITORIAL SECTION -->
+                <!-- Tall Image -->
+                <div class="gallery-item editorial tall-item" data-caption="Editorial Fashion">
+                    <img src="Images/img4-editorial.jpg" 
+                         alt="Editorial Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-xs sm:text-sm md:text-lg font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+                
+                <!-- LIFESTYLE SECTION -->
+                <!-- Medium Image -->
+                <div class="gallery-item lifestyle medium-item" data-caption="Lifestyle Photography">
+                    <img src="Images/img5-lifestyle.jpg" 
+                         alt="Lifestyle Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-xs sm:text-sm md:text-lg font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+                
+                <!-- Small Image -->
+                <div class="gallery-item lifestyle small-item" data-caption="Lifestyle Photography">
+                    <img src="Images/img6-lifestyle.jpg" 
+                         alt="Lifestyle Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-xs sm:text-sm font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+                
+                <!-- Large Featured Image -->
+                <div class="gallery-item lifestyle large-item" data-caption="Lifestyle Photography">
+                    <img src="Images/img7-lifestyle.jpg" 
+                         alt="Lifestyle Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
                     <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
                         <p class="text-sm sm:text-lg md:text-xl font-semibold">@Franceskah_J</p>
                     </div>
                 </div>
                 
                 <!-- Medium Image -->
-                <div class="gallery-item commercial medium-item" data-caption="Zara SS24 Campaign">
-                    <img src="https://scontent.fmnl3-2.fna.fbcdn.net/v/t1.15752-9/510381181_744614308028009_2400506506627233126_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=ozXzKYWr0wEQ7kNvwFNp_HX&_nc_oc=AdmQnF4l_JLWzZ-KDKgMe_vq3rj5peU5VsKVPKS8jf6OybR3pY0QDQtYSse8JDPFUQw&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl3-2.fna&oh=03_Q7cD2gGYgdkbtUcOz2yoLT5T-LtBdPUyFEwX5YcykBer5s6GIw&oe=688C4FE6" 
-                         alt="Commercial Shoot" class="w-full h-full object-cover rounded-lg cursor-pointer">
+                <div class="gallery-item lifestyle medium-item" data-caption="Lifestyle Campaign">
+                    <img src="Images/img8-lifestyle.jpg" 
+                         alt="Lifestyle Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
                     <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
                         <p class="text-xs sm:text-sm md:text-lg font-semibold">@Franceskah_J</p>
                     </div>
                 </div>
                 
-                <!-- Small Image -->
-                <div class="gallery-item runway small-item" data-caption="NY Fashion Week 2023">
-                    <img src="https://scontent.fmnl37-2.fna.fbcdn.net/v/t1.15752-9/510127142_1575912803794421_3721240808855826208_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=51Y3liIWMkMQ7kNvwFVV_io&_nc_oc=AdmTDK4RLigzcsxluR8XVHw8RgWV0O6xZ7XQzsKfnwM3aZ-g-nHwLwPMgGK-h7GijxY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl37-2.fna&oh=03_Q7cD2gGSOy6Vzqgebo8FQGRrZMYLJKDv9c-RiQuf9ACl0QYgIQ&oe=688C4C44" 
-                         alt="Runway Show" class="w-full h-full object-cover rounded-lg cursor-pointer">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
-                        <p class="text-xs sm:text-sm font-semibold">@Franceskah_J</p>
-                    </div>
-                </div>
-
-                 <!-- Large Featured Image -->
-                <div class="gallery-item editorial large-item" data-caption="Runway Charity walk">
-                    <img src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t1.15752-9/513264025_1239588657653893_6395695390004127627_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=frhGlhtvjM8Q7kNvwHzB_e4&_nc_oc=Adl-FUHFTiscV_BHPv8lsgQjgMrjcGofOHECVBPYrVAw4V3Ej5UZMKKYMi3XTLGWcpY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl3-4.fna&oh=03_Q7cD2gFDqXoZCKiF91k0y6eixtuVNensJEUl0iY0K2uB1xJ5xQ&oe=688C4F8D" 
-                         alt="Editorial Shoot" class="w-full h-full object-cover rounded-lg cursor-pointer">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
-                        <p class="text-sm sm:text-lg md:text-xl font-semibold">@Franceskah_J</p>
-                    </div>
-                </div>
-
-                 <!-- Tall Image -->
-                <div class="gallery-item editorial tall-item" data-caption="Harper's Bazaar - Winter 2023">
-                    <img src="https://scontent.fmnl3-1.fna.fbcdn.net/v/t1.15752-9/513501053_1081521690707586_6488605156557712235_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=IVr5Ese-9NoQ7kNvwEvKsOU&_nc_oc=AdknXLMqnkFHO72nTJmC749Ih3bcyPW8d_h1gMlGuNcljJwYiVO2aJ8ld-O0_D2YpdI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl3-1.fna&oh=03_Q7cD2gET8fMQ1LsxsP3wWJsPQbAj-JWm9SqM-4lVCglzT6gFUQ&oe=688C6D17" 
-                         alt="Editorial Shoot" class="w-full h-full object-cover rounded-lg cursor-pointer">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
-                        <p class="text-xs sm:text-sm md:text-lg font-semibold">@Franceskah_J</p>
-                    </div>
-                </div>
-
-                 <!-- Tall Image -->
-                <div class="gallery-item editorial tall-item" data-caption="Harper's Bazaar - Winter 2023">
-                    <img src="https://scontent.fmnl37-1.fna.fbcdn.net/v/t1.15752-9/513912537_1256184603176277_8153517861695096326_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Quge5sWub20Q7kNvwGvZsU_&_nc_oc=Adl1unN5AiUw3Mw-bQNpUXquT3RRkENB0j8cddwShbCXDJx8P80adja4dRt2DlRTsEI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl37-1.fna&oh=03_Q7cD2gG2RMKnE-QFtB6UNIgQh9Cvtp9QPU5NrcUPObzEluHhGQ&oe=688C4F01" 
-                         alt="Editorial Shoot" class="w-full h-full object-cover rounded-lg cursor-pointer">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
-                        <p class="text-xs sm:text-sm md:text-lg font-semibold">@Franceskah_J</p>
-                    </div>
-                </div>
-
-                 <!-- Large Featured Image -->
-                <div class="gallery-item runway large-item" data-caption="Runway Charity walk">
-                    <img src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t1.15752-9/513073355_1880914342762329_7775371026984972154_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=TvEnAQ6lqnMQ7kNvwE2RAv9&_nc_oc=AdnVcNp5XiOg65OMHWRAeuz8PnLmHiI_5V4k2shC9ZEtMxVZu-XJEe_Lqr7TVuAEo4g&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl3-4.fna&oh=03_Q7cD2gEjsxCg3ecrWEviiAvN2mlXH7YipeFI8QuBh1kHV8VhGA&oe=688C4228" 
-                         alt="Editorial Shoot" class="w-full h-full object-cover rounded-lg cursor-pointer">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
-                        <p class="text-sm sm:text-lg md:text-xl font-semibold">@Franceskah_J</p>
-                    </div>
-                </div>
-
-                 <!-- Medium Image -->
-                <div class="gallery-item commercial medium-item" data-caption="Zara SS24 Campaign">
-                    <img src="https://scontent.fmnl37-1.fna.fbcdn.net/v/t1.15752-9/514193035_1223093652435071_1281319447160122621_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=LiQg17sMt2wQ7kNvwGQbiGH&_nc_oc=AdlvoBy3OPj1tHwGDB4zRXX_qwTNbXPjwG20OQPVhzoYvotuN92Ho2ZksU00aQ0ieGU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl37-1.fna&oh=03_Q7cD2gEzdFF_RPgCF0XhKHad2pHJvAW4nFPWrnHdMiJholSuGw&oe=688C920C" 
-                         alt="Commercial Shoot" class="w-full h-full object-cover rounded-lg cursor-pointer">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
-                        <p class="text-xs sm:text-sm md:text-lg font-semibold">@Franceskah_J</p>
-                    </div>
-                </div>
                 <!-- Large Featured Image -->
-                <div class="gallery-item lifestyle large-item" data-caption="Runway Charity walk">
-                    <img src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t1.15752-9/514225717_9797792733662365_1817983890870211760_n.png?stp=dst-png_s600x600&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=usPdHJ6FstgQ7kNvwE9Bfuy&_nc_oc=Adm002tjwgOB4tAZ_lYm5zPtmCL-rhUMby4RW3WhfC9SLrqnOFk1NMqZR9ZqhKN10dQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl3-4.fna&oh=03_Q7cD2gE_xzjkUiMT9Z5Gh4tYN195mMRo0ARoh7DFUlaNErYRjA&oe=688C8F3C" 
-                         alt="Editorial Shoot" class="w-full h-full object-cover rounded-lg cursor-pointer">
+                <div class="gallery-item editorial large-item" data-caption="Editorial Fashion">
+                    <img src="Images/img9-editorial.jpg" 
+                         alt="Editorial Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
                     <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
                         <p class="text-sm sm:text-lg md:text-xl font-semibold">@Franceskah_J</p>
                     </div>
                 </div>
 
-                <!-- Small Image -->
-                <div class="gallery-item runway small-item" data-caption="NY Fashion Week 2023">
-                    <img src="https://scontent.fmnl37-1.fna.fbcdn.net/v/t1.15752-9/514074366_749040784743474_6454817915792130028_n.png?stp=dst-png_s552x414&_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=K5QXTfeYe4EQ7kNvwHyHoyB&_nc_oc=Adlv8m2zMnWLW29Oa9m0B80-dxY3q65YtBwWaD0IXaIoiyeoe6etMjBOLgBksboK3-s&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl37-1.fna&oh=03_Q7cD2gH1NbZxqv_PqgSGCmNFe68OEUfF0b0cUJB1lZarcnNYYw&oe=688C9733" 
-                         alt="Runway Show" class="w-full h-full object-cover rounded-lg cursor-pointer">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
-                        <p class="text-xs sm:text-sm font-semibold">@Franceskah_J</p>
-                    </div>
-                </div>
-
-
-
-
+                <!-- COMMERCIAL SECTION -->
                 <!-- Large Featured Image -->
-                <div class="gallery-item commercial large-item" data-caption="Runway Charity walk">
-                    <img src="https://scontent.fmnl37-2.fna.fbcdn.net/v/t1.15752-9/510401485_1261485658986894_2020215462003184210_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=pNFB1mEAGJ4Q7kNvwGGLM4Q&_nc_oc=AdlMeLhiWXwxXFqxTjmJsw-Xm0RSr6aJbeH8e4oIQv_urzjZX7rr1c14WQNXU308tXw&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl37-2.fna&oh=03_Q7cD2gGEp5ZmyvXcXMSQVDGutV871XuZm8I8tnM9M-doC-080A&oe=688C3D40" 
-                         alt="Editorial Shoot" class="w-full h-full object-cover rounded-lg cursor-pointer">
+                <div class="gallery-item commercial large-item" data-caption="Commercial Campaign">
+                    <img src="Images/img10-commercial.jpg" 
+                         alt="Commercial Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
                     <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
                         <p class="text-sm sm:text-lg md:text-xl font-semibold">@Franceskah_J</p>
                     </div>
                 </div>
-                
+
+                <!-- Tall Image -->
+                <div class="gallery-item editorial tall-item" data-caption="Editorial Fashion">
+                    <img src="Images/img11-editorial.jpg" 
+                         alt="Editorial Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-xs sm:text-sm md:text-lg font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+
                 <!-- Medium Image -->
-                <div class="gallery-item lifestyle medium-item" data-caption="Zara SS24 Campaign">
-                    <img src="https://scontent.fmnl37-2.fna.fbcdn.net/v/t1.15752-9/507988160_1769999840257908_313586522875251539_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Hm09JO_EGT0Q7kNvwGenJgw&_nc_oc=Adlf0N3gnb_CPw3lDgws4CM5CYtjM3InLL7p_U57vi6YVMJdItA4S3k2_SSkGTore_k&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl37-2.fna&oh=03_Q7cD2gGw400qygnO7eqPGoGTfSdgke9qorrZTLzGeUfXtIEiOg&oe=688C66E1" 
-                         alt="Commercial Shoot" class="w-full h-full object-cover rounded-lg cursor-pointer">
+                <div class="gallery-item editorial medium-item" data-caption="Editorial Portrait">
+                    <img src="Images/img12-editorial.jpg" 
+                         alt="Editorial Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
                     <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
                         <p class="text-xs sm:text-sm md:text-lg font-semibold">@Franceskah_J</p>
                     </div>
                 </div>
-                
+
+                <!-- Large Featured Image -->
+                <div class="gallery-item commercial large-item" data-caption="Commercial Photography">
+                    <img src="Images/img13-commercial.jpg" 
+                         alt="Commercial Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-sm sm:text-lg md:text-xl font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+
+                <!-- Medium Image -->
+                <div class="gallery-item lifestyle medium-item" data-caption="Lifestyle Photography">
+                    <img src="Images/img14-lifestyle.jpg" 
+                         alt="Lifestyle Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-xs sm:text-sm md:text-lg font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+
+                <!-- Large Featured Image -->
+                <div class="gallery-item editorial large-item" data-caption="Editorial Fashion">
+                    <img src="Images/img15-editorial.jpg" 
+                         alt="Editorial Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-sm sm:text-lg md:text-xl font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+
                 <!-- Small Image -->
-                <div class="gallery-item lifestyle small-item" data-caption="NY Fashion Week 2023">
-                    <img src="https://scontent.fmnl37-2.fna.fbcdn.net/v/t1.15752-9/494890139_694608340119643_7167266000707251787_n.png?stp=dst-png_p480x480&_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=ptBOqWZLqewQ7kNvwGB68nh&_nc_oc=AdlG-v31N3AWs13jQBWrP7dl-sR7weTjZ1BBVVku0EbF0wJ8AgdXzmO4-SUcDONbp6Q&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl37-2.fna&oh=03_Q7cD2gFALcn5tDm9H-Qz7qof6Dpk6cl8USrNueMckyy8rJ-POA&oe=688C9F71" 
-                         alt="Runway Show" class="w-full h-full object-cover rounded-lg cursor-pointer">
+                <div class="gallery-item editorial small-item" data-caption="Editorial Portrait">
+                    <img src="Images/img16-editorial.jpg" 
+                         alt="Editorial Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
                     <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
                         <p class="text-xs sm:text-sm font-semibold">@Franceskah_J</p>
                     </div>
                 </div>
+
+                <!-- Large Featured Image -->
+                <div class="gallery-item editorial large-item" data-caption="Editorial Fashion">
+                    <img src="Images/img17-editorial.jpg" 
+                         alt="Editorial Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-sm sm:text-lg md:text-xl font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+
+                <!-- Medium Image -->
+                <div class="gallery-item editorial medium-item" data-caption="Editorial Portrait">
+                    <img src="Images/img18-editorial.jpg" 
+                         alt="Editorial Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-xs sm:text-sm md:text-lg font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+
+                <!-- Small Image -->
+                <div class="gallery-item editorial small-item" data-caption="Editorial Photography">
+                    <img src="Images/img19-editorial.jpg" 
+                         alt="Editorial Shoot" class="w-full h-full object-contain rounded-lg cursor-pointer bg-gray-100">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black bg-opacity-50 text-white rounded-lg">
+                        <p class="text-xs sm:text-sm font-semibold">@Franceskah_J</p>
+                    </div>
+                </div>
+
+
+
 
 
             </div>
